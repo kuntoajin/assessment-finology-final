@@ -7,6 +7,8 @@
   display: grid;
   list-style: none;
   grid-template-columns: repeat(3, 1fr);
+  padding: 0;
+  height: 100%;
 }
 
 .header > ul {
@@ -15,7 +17,25 @@
   color: white;
 }
 
+.header > ul > li > .logo {
+  display: flex;
+  align-items: center;
+}
+
 .header > ul > li.menu > ul {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+}
+
+.header > ul > li.menu > ul > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper > .main__container {
+  width: 1200px;
+  margin: auto;
+  border: 1px solid;
+  height: 100px;
 }
