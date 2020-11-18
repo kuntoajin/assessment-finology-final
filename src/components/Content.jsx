@@ -6,6 +6,7 @@ const Content = () => {
           src="../../assets/content-001.png"
           alt="We can give you our best user experience to your system"
         />
+        <p>We can give you our best user experience to your system</p>
       </div>
     </div>
   );
