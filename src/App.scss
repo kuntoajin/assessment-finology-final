@@ -1,0 +1,169 @@
+.wrapper {
+  > .header {
+    background-color: #242584;
+    > ul {
+      display: grid;
+      list-style: none;
+      grid-template-columns: 1fr 2fr 1fr;
+      padding: 0;
+      height: 100%;
+      justify-content: space-between;
+      margin: auto;
+      color: white;
+      width: 1200px;
+      > li.menu {
+        > .logo {
+          display: flex;
+          align-items: center;
+        }
+        > ul {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+    }
+  }
+  > .hero {
+    width: 100%;
+    left: 0;
+    background-color: #242584;
+    color: white;
+    > .hero__content {
+      width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > .img__left {
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        overflow: hidden;
+        > img {
+          margin-left: -110px;
+        }
+      }
+      > .img__right {
+        position: absolute;
+        z-index: 0;
+        right: 0;
+        overflow: hidden;
+        > img {
+          margin-right: -277px;
+        }
+      }
+      > .word {
+        margin-bottom: 110px;
+        z-index: 1;
+        > h1 {
+          font-size: 4.2rem;
+          font-weight: 800;
+        }
+      }
+      > .banner {
+        height: 620px;
+        z-index: 1;
+        > img {
+          margin-top: 120px;
+          width: 590px;
+        }
+      }
+    }
+  }
+  > .main__container {
+    width: 1200px;
+    margin: auto;
+    height: 100vh;
+    > .content__container {
+      margin-top: 80px;
+      > .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        > .word {
+          > h2 {
+            margin-top: 101px;
+            font-size: 33px;
+            font-weight: 800;
+            color: #242584;
+          }
+        }
+      }
+    }
+    > .whatpeoplesay {
+      > .title {
+        display: flex;
+        align-items: center;
+        > div {
+          > .icon__heart {
+            padding: 10px;
+            background-color: #fe0203;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-right: 50px;
+            > svg {
+              font-size: 35px;
+              color: white;
+            }
+          }
+        }
+        > h2 {
+          margin: 0;
+          font-size: 33px;
+          font-weight: 800;
+          color: #242584;
+          width: 510px;
+        }
+      }
+      > .testimoni {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 150%;
+      }
+    }
+    > .importantpeople {
+      > .title {
+        display: flex;
+        align-items: center;
+        > div {
+          > .icon__smile {
+            padding: 10px;
+            background-color: #ff19b8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-right: 50px;
+            > svg {
+              font-size: 35px;
+              color: white;
+            }
+          }
+        }
+        > h2 {
+          margin: 0;
+          font-size: 33px;
+          font-weight: 800;
+          color: #242584;
+          width: 510px;
+        }
+      }
+    }
+    > .partners {
+      text-align: center;
+      > .title {
+        > h2 {
+          font-size: 33px;
+          font-weight: 800;
+          color: #242584;
+        }
+      }
+      > .companies {
+        > img {
+          padding: 0 20px;
+        }
+      }
+    }
+  }
+}

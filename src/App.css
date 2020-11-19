@@ -4,8 +4,8 @@ body,
   font-family: "Nunito", sans-serif;
 }
 
-.header {
-  background-color: #242584;
+p {
+  font-family: "Nunito", sans-serif;
 }
 
 .header > ul,
@@ -17,96 +17,8 @@ body,
   height: 100%;
 }
 
-.header > ul {
-  justify-content: space-between;
-  margin: auto;
-  color: white;
-  width: 1200px;
-}
-
-.header > ul > li > .logo {
-  display: flex;
-  align-items: center;
-}
-
-.header > ul > li.menu > ul {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-}
-
 .header > ul > li.menu > ul > li {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.wrapper > .main__container {
-  width: 1200px;
-  margin: auto;
-  height: 100vh;
-}
-
-.main__container > .hero {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  background-color: #242584;
-  color: white;
-}
-
-.main__container > .hero > .hero__content {
-  width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main__container > .hero > .hero__content > .img__left {
-  position: absolute;
-  z-index: 0;
-  left: 0;
-  bottom: 0;
-  overflow: hidden;
-}
-
-.main__container > .hero > .hero__content > .img__left > img {
-  margin-left: -110px;
-}
-
-.main__container > .hero > .hero__content > .img__right {
-  position: absolute;
-  z-index: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-}
-
-.main__container > .hero > .hero__content > .img__right > img {
-  margin-right: -277px;
-}
-
-.main__container > .hero > .hero__content > .word {
-  margin-bottom: 110px;
-  z-index: 1;
-}
-
-.main__container > .hero > .hero__content > .word > h1 {
-  font-size: 4.2rem;
-  font-weight: 800;
-}
-
-.main__container > .hero > .hero__content > .banner {
-  height: 620px;
-  z-index: 1;
-}
-
-.main__container > .hero > .hero__content > .banner > img {
-  margin-top: 120px;
-  width: 590px;
-}
-
-.main__container > .content__container > .content {
-  position: absolute;
-  bottom: 0;
 }
