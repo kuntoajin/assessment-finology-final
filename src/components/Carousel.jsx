@@ -155,23 +155,8 @@ const Carousel = ({click, nextSlide}) => {
                 )
             })
         }
+        console.log('jalan')
     }  
-
-    useEffect(() => {
-
-        click((jump = 1) => {
-            if (!isTicking) {
-                setIsTicking(true)
-                setItems(prev => {
-                    return prev.map(
-                        (_, i) => prev[(i - jump + bigLength) % bigLength]
-                        )
-                    })
-                }
-            }  
-        )
-
-    }, [nextSlide])
 
     const handleDotClick = idx => {
         if (idx < activeIdx) prevClick(activeIdx - idx)
@@ -201,11 +186,19 @@ const Carousel = ({click, nextSlide}) => {
 })}
                     </ul>
                 </div>
-                <button
-                    className='carousel__btn carousel__btn--next'
-                    onClick={() => nextClick()}>
-                    <i className='carousel__btn-arrow carousel__btn-arrow--right' />
-                </button>
+                <div className="icon__next" onClick={() => nextClick()} >
+                    <div style={{
+                        width: 50,
+                        height: 50,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        backgroundColor: '#EEDEFF',
+                        borderRadius: '50%'
+                    }}>
+                        <img src="../../assets/images/arrow-right.svg" alt="Next" />
+                    </div>
+                </div>
                 <div className='carousel__dots'>
                     {items.slice(0, length).map((pos, i) => (
                         <button

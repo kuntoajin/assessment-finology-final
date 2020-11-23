@@ -99,19 +99,44 @@
           > div {
             > .icon__heart {
               margin-right: 20px;
+              width: 45px;
+              height: 37px;
               > svg {
                 font-size: 25px;
               }
             }
             > .icon__smile {
               margin-right: 20px;
+
               > svg {
                 font-size: 25px;
               }
             }
+            > h2 {
+              font-size: 24px;
+              width: 100%;
+            }
           }
           > .icon__next {
             display: none;
+          }
+        }
+        > .testimoni {
+          display: flex;
+          padding-left: 0;
+          > .person {
+            padding: 20px;
+            min-width: 100%;
+          }
+        }
+        > .dot {
+          display: flex;
+          justify-content: center;
+          > div {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 0 3px;
           }
         }
       }
@@ -191,5 +216,13 @@
         grid-gap: 30px;
       }
     }
+  }
+  .carousel__dots {
+    padding: 100%;
+    text-align: center;
+  }
+  .carousel__slide-item {
+    width: 5rem;
+    box-sizing: border-box;
   }
 }

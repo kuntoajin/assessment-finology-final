@@ -119,17 +119,17 @@
               color: white;
             }
           }
-        }
-        > h2 {
-          margin: 0;
-          font-size: 33px;
-          font-weight: 800;
-          color: #242584;
-          width: 510px;
+          > h2 {
+            margin: 0;
+            font-size: 33px;
+            font-weight: 800;
+            color: #242584;
+            width: 510px;
+          }
         }
       }
       > .testimoni {
-        display: grid;
+        display: flex;
         grid-gap: 40px;
         padding-left: 10px;
         > .person {
@@ -178,40 +178,42 @@
           }
         }
         > .upload {
-          > .inputfile {
-            width: 0.1px;
-            height: 0.1px;
-            opacity: 0;
-            overflow: hidden;
-            position: absolute;
-            z-index: -1;
-          }
-          > label {
-            background-color: #dcf0ff;
-            display: flex;
-            width: 100px;
-            height: 100px;
-            margin: auto;
-            border-radius: 50%;
-            justify-content: center;
-            position: relative;
-            > img {
-              opacity: 0.4;
-            }
-            > span {
+          > form {
+            > .inputfile {
+              width: 0.1px;
+              height: 0.1px;
+              opacity: 0;
+              overflow: hidden;
               position: absolute;
-              bottom: 0;
-              right: 0;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              z-index: -1;
+            }
+            > label {
               background-color: #dcf0ff;
+              display: flex;
+              width: 100px;
+              height: 100px;
+              margin: auto;
               border-radius: 50%;
-              width: 30px;
-              height: 30px;
-              box-shadow: rgba(49, 53, 59, 0.12) 0px 1px 6px 0px;
+              justify-content: center;
+              position: relative;
               > img {
                 opacity: 0.4;
+              }
+              > span {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #dcf0ff;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                box-shadow: rgba(49, 53, 59, 0.12) 0px 1px 6px 0px;
+                > img {
+                  opacity: 0.4;
+                }
               }
             }
           }
@@ -522,7 +524,7 @@ $slide-count: 5;
 $slide-width: 30rem;
 
 .carousel__wrap {
-  margin-top: 10%;
+  margin-top: 20px;
   align-items: center;
   display: flex;
   flex: 1;
@@ -534,20 +536,25 @@ $slide-width: 30rem;
 }
 
 .carousel__inner {
-  height: 40rem;
+  height: 310px;
   position: relative;
   width: calc(#{$slide-width * 3});
+  > .icon__next {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 .carousel__container {
-  height: 100%;
+  height: 210px;
   overflow: hidden;
   position: relative;
   width: 100%;
 }
 
 .carousel__slide-list {
-  height: 100%;
+  height: auto;
   left: 50%;
   list-style-type: none;
   margin: 0;
@@ -580,9 +587,7 @@ $slide-width: 30rem;
 }
 
 .carousel-slide-item__body {
-  bottom: -2.5rem;
   height: 10%;
-  position: absolute;
 
   h4 {
     margin: 0.7rem 0 0;

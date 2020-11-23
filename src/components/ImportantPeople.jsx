@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { FaSmile } from 'react-icons/fa'
 import { BsTrash } from 'react-icons/bs'
+import { VscLoading } from 'react-icons/vsc'
+import axios from 'axios'
 
 let people = [
     {
@@ -49,6 +51,8 @@ let people = [
 
 const ModalAddPeople = ({ onclick }) => {
     const [selectedFile, setSelectedFile] = useState(null)
+    const [filename, setFilename] = useState('')
+    const [uploadedFile, setUploadedFile] = useState({});
     const [data, setData] = useState({
         name: "",
         occupation: "",
@@ -57,7 +61,6 @@ const ModalAddPeople = ({ onclick }) => {
     })
 
     const handleAddPeople = () => {
-        console.log(people)
         people.push({
             name: data.name,
             occupation: data.occupation,
@@ -68,12 +71,33 @@ const ModalAddPeople = ({ onclick }) => {
     }
 
     const handleImageUpload = e => {
-        setSelectedFile({
-            selectedFile: e.target.value,
-            loaded: 0
-        })
+        setSelectedFile(e.target.files[0])
+        setFilename(e.target.files[0].name)
     }
 
+    console.log(people)
+
+    const onSubmit = async e => {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('file', selectedFile);
+    
+        try {
+          const res = await axios.post('/upload', formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          });
+    
+          const { fileName, filePath } = res.data;
+    
+          setUploadedFile({ fileName, filePath });
+    
+        } catch (err) {
+        }
+      };
+
+    console.log(filename)
     return (
         <div className="modal__add__people">
             <div className="modal">
@@ -82,13 +106,15 @@ const ModalAddPeople = ({ onclick }) => {
                     <img src="../../assets/images/cancel.svg" alt="close" onClick={onclick}/>
                 </div>
                 <div className="upload">
-                    <input type="file" name="file" id="file" className="inputfile" onChange={handleImageUpload}/>
-                    <label htmlFor="file">
-                        <img src="../../assets/images/user.svg" alt=""/>
-                        <span>
-                            <img src="../../assets/images/pencil.svg" alt="" width="14"/>
-                        </span>
-                    </label>
+                    <form onSubmit={onSubmit}>
+                        <input type="file" name="file" id="file" className="inputfile" onChange={handleImageUpload}/>
+                        <label htmlFor="file">
+                            <img src="../../assets/images/user.svg" alt=""/>
+                            <span>
+                                <img src="../../assets/images/pencil.svg" alt="" width="14"/>
+                            </span>
+                        </label>
+                    </form>
                 </div>
                 <div className="form">
                     <div className="name">
