@@ -1,25 +1,35 @@
-const express = require('express')
-const fileUpload = require('express-fileupload')
+const express = require('express');
+const fileUpload = require('express-fileupload');
+const cors = require('cors')
 
-const app = express()
+const app = express();
 
-app.use(fileUpload())
+// middle ware
+app.use(express.static('public')); //to access the files in public folder
+app.use(cors()); // it enables all cors requests
+app.use(fileUpload());
 
+// file upload api
 app.post('/upload', (req, res) => {
-    if (req.files === null) {
-        return res.status(400).json({ msg: 'No file uploaded' });
+
+    if (!req.files) {
+        return res.status(500).send({ msg: "file is not found" })
     }
-    
-      const file = req.files.file;
-    
-      file.mv(`${__dirname}/client/public/uploads/${file.name}`, err => {
+    // accessing the file
+    const myFile = req.files.file;
+
+    //  mv() method places the file inside public directory
+    myFile.mv(`${__dirname}/client/public/assets/images/${myFile.name}`, function (err) {
         if (err) {
-          console.error(err);
-          return res.status(500).send(err);
+            console.log(err)
+            return res.status(500).send({ msg: "Error occured" });
         }
-    
-        res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
+        // returing the response with file path and name
+        return res.send({ name: myFile.name, path: `/${myFile.name}` });
     });
 })
 
-app.listen(3000, () => console.log('Server started...'))
+
+app.listen(4500, () => {
+    console.log('server is running at port 4500');
+})
