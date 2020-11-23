@@ -24,6 +24,27 @@
           }
         }
       }
+      > .nav {
+        display: block;
+        position: absolute;
+        z-index: 10;
+        color: white;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-top: 5rem;
+        background-color: #242584;
+        height: 400vh;
+        transition: all ease 300ms;
+        > ul {
+          list-style: none;
+          > li {
+            margin-bottom: 20px;
+            font-size: 19px;
+          }
+        }
+      }
     }
     > .hero {
       > .hero__content {
@@ -74,6 +95,7 @@
       > .whatpeoplesay {
         min-width: 100%;
         > .title {
+          padding: 0 20px;
           > div {
             > .icon__heart {
               margin-right: 20px;
@@ -97,9 +119,18 @@
         > .heading {
           display: grid;
           > .title {
+            padding: 0 20px;
             > h2 {
               width: 100%;
               font-size: 23px;
+            }
+            > div {
+              > .icon__smile {
+                margin-right: 20px;
+                > svg {
+                  font-size: 25px;
+                }
+              }
             }
           }
           > .action {
@@ -115,6 +146,11 @@
             > .identity {
               > img {
                 width: 100%;
+              }
+              > .info {
+                > .occupation {
+                  font-size: 12px;
+                }
               }
             }
           }

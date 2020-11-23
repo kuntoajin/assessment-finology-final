@@ -1,7 +1,15 @@
 import '../App.css'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { FaTimes } from 'react-icons/fa'
+import { useState } from 'react'
 
 const Header = () => {
+    const [showUp, setShowUp] = useState(-100)
+
+    const openUp = () => setShowUp(0)
+
+    const closeUp = () => setShowUp(-100)
+
     return (
         <div className="header">
             <ul>
@@ -24,11 +32,13 @@ const Header = () => {
                         <img src="../../assets/images/search.svg" />
                     </div>
                     <div className="drawer__icon">
-                        <GiHamburgerMenu onClick={() => console.log('test')}/>
+                        { showUp === 0 ? <FaTimes onClick={closeUp} /> : <GiHamburgerMenu onClick={openUp}/>}
                     </div>
                 </li>
             </ul>
-            <div className="nav">
+            <div 
+                className="nav"
+                style={{transform: `translateX(${showUp}%)`}}>
                 <ul>
                     <li>Home</li>
                     <li>About Us</li>
